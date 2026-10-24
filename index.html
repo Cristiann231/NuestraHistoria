@@ -1,0 +1,115 @@
+
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="theme-color" content="#110e1c">
+    <title>Nuestra Historia | Ariana</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <div class="stars" aria-hidden="true" id="stars"></div>
+
+    <button class="music" id="musicButton" aria-label="Activar música" title="Música">
+        ♫ <span id="musicLabel">Activar música</span>
+    </button>
+
+    <audio id="music" src="musica/cancion.mp3" loop preload="none"></audio>
+
+    <main>
+        <section class="screen welcome active" id="welcome" aria-labelledby="welcomeTitle">
+            <div class="center">
+                <p class="eyebrow">UNA HISTORIA QUE VALE LA PENA RECORDAR</p>
+                <div class="heart">♡</div>
+                <h1 id="welcomeTitle">Para ti, maramamor</h1>
+                <p class="lead">
+                    Hay momentos que quisiera guardar para siempre…
+                    Y todos tienen algo en común: <em>tú.</em>
+                </p>
+                <button class="primary" id="start">
+                    Comenzar nuestra historia <span aria-hidden="true">→</span>
+                </button>
+                <p class="footnote">Hecho especialmente para ti ♡</p>
+            </div>
+        </section>
+
+        <section class="screen story" id="story" aria-label="Nuestra película" hidden>
+            <div class="story-image" id="storyImage">
+                <img id="storyPhoto" alt="Recuerdo" src="fotos/foto1.jpeg">
+                <div class="shade"></div>
+
+                <div class="story-caption">
+                    <p class="eyebrow" id="counter">RECUERDO 01 / 08</p>
+                    <h2 id="storyTitle"></h2>
+                    <p id="storyText"></p>
+                    <button id="readMore" type="button" hidden>Leer más ♡</button>
+                </div>
+            </div>
+
+            <div class="story-controls">
+                <button class="ghost" id="previous">← Anterior</button>
+                <div id="dots" class="dots" aria-label="Progreso"></div>
+                <button class="ghost" id="next">Siguiente →</button>
+            </div>
+        </section>
+
+        <section class="screen menu" id="menu" hidden>
+            <div class="center">
+                <p class="eyebrow">NUESTRA HISTORIA CONTINÚA</p>
+                <h2>Y esto no es todo,mi cachetes ♡</h2>
+                <p class="lead">Hay cosas que ninguna fotografía puede contar. Preparé algo más para ti…</p>
+
+                <div class="choices">
+                    <button class="choice" data-open="memories">
+                        📷 <span>Nuestros recuerdos</span> <span>→</span>
+                    </button>
+                    <button class="choice" data-open="growth">
+                        ✨ <span>Todo lo que me ayudaste a mejorar</span> <span>→</span>
+                    </button>
+                    <button class="choice" data-open="ending">
+                        ♡ <span>No quiero que esta historia termine</span> <span>→</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <section class="screen section-page" id="memories" hidden>
+            <div class="section-inner">
+                <button class="back" data-back>← Volver</button>
+                <p class="eyebrow">NUESTRO ÁLBUM</p>
+                <h2>Nuestros recuerdos ♡</h2>
+                <p class="section-intro">Un lugar para guardar nuestras fotos, videos y momentos favoritos.</p>
+                <div class="memory-grid" id="memoryGrid"></div>
+            </div>
+        </section>
+
+        <section class="screen section-page" id="growth" hidden>
+            <div class="section-inner">
+                <button class="back" data-back>← Volver</button>
+                <p class="eyebrow">LO QUE APRENDÍ CONTIGO</p>
+                <h2>Gracias por tanto, cachimor ♡</h2>
+                <article class="letter" id="growthLetter"></article>
+            </div>
+        </section>
+
+        <section class="screen ending" id="ending" hidden>
+            <div class="center">
+                <button class="back" data-back>← Volver</button>
+                <p class="eyebrow">EL SIGUIENTE CAPÍTULO</p>
+                <div class="heart">♡</div>
+                <h2>No quiero que esta historia termine</h2>
+                <p class="lead" id="endingText"></p>
+                <p class="signature" id="signature"></p>
+                <button class="primary" data-open="menu">Volver a nuestra historia ♡</button>
+            </div>
+        </section>
+    </main>
+
+    <div class="lightbox" id="lightbox" hidden role="dialog" aria-modal="true" aria-label="Ver recuerdo">
+        <button id="closeLightbox" class="close" aria-label="Cerrar">✕</button>
+        <div id="lightboxContent"></div>
+    </div>
+</body>
+</html>
